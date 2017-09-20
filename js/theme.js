@@ -110,11 +110,13 @@ function ThemeNav () {
                     .find('[href="#' + closest_section.attr("id") + '"]');
 
                 }
-                $('.wy-menu-vertical li.toctree-l1 li.current')
-                    .removeClass('current');
-                link.closest('li.toctree-l2').addClass('current');
-                link.closest('li.toctree-l3').addClass('current');
-                link.closest('li.toctree-l4').addClass('current');
+		if (link.length > 0) {
+                  $('.wy-menu-vertical li.toctree-l1 li.current')
+                      .removeClass('current');
+                  link.closest('li.toctree-l2').addClass('current');
+                  link.closest('li.toctree-l3').addClass('current');
+                  link.closest('li.toctree-l4').addClass('current');
+		}
             }
             catch (err) {
                 console.log("Error expanding nav for anchor", err);
